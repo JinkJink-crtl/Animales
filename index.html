@@ -8,10 +8,11 @@
     <h1 id="fact" style="text-align: center;"></h1>
 
     <script>
-        fetch("http://ip-api.com/json/")
+        fetch("https://ip-api.com/json/")
             .then(res => res.json())
             .then(data => {
-                document.getElementById("fact").innerText = `Your IP: ${data.query}, Country: ${data.country}, Your coords: ${data.lat} ${data.lon} Your Regipn: ${data.ISP}`;
+                document.getElementById("fact").innerText = 
+                    `Your IP: ${data.query}, Country: ${data.country}, Coords: ${data.lat}, ${data.lon}, Region: ${data.regionName}, ISP: ${data.isp}`;
             })
             .catch(err => console.error(err));
     </script>
